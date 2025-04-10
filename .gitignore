@@ -1,0 +1,31 @@
+# Environnements virtuels Python
+REAVenv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers sensibles
+.env
+*.secret
+api_req.txt  # À exclure si contient des clés API
+
+# Données volumineuses/scrapées (à adapter)
+*.csv       # Exclut tous les CSV (optionnel)
+#!MubawabAppartement_sample.csv  # Conserver un échantillon si besoin
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Fichiers IDE/Editeurs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fichiers de build/dépendances
+node_modules/
+dist/
+build/

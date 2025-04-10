@@ -1,0 +1,121 @@
+{
+  "title": "Maison Moderne à Paris",
+  "city": "Paris",
+  "property": "Maison",
+  "area": 150.0,
+  "rooms": 5,
+  "price": 850000,
+  "longitude": 2.3522,
+  "latitude": 48.8566,
+  "link": "http://example.com/maison-1",
+  "is_sold": false
+}
+
+
+{
+  "title": "Appartement Spacieux à Lyon",
+  "city": "Lyon",
+  "property": "Appartement",
+  "area": 85.0,
+  "rooms": 3,
+  "price": 250000,
+  "longitude": 4.8357,
+  "latitude": 45.7640,
+  "link": "http://example.com/appartement-1",
+  "is_sold": true
+}
+
+
+{
+  "title": "Terrain à vendre à Marseille",
+  "city": "Marseille",
+  "property": "Terrain",
+  "area": 500.0,
+  "price": 300000,
+  "longitude": 5.3698,
+  "latitude": 43.2965,
+  "link": "http://example.com/terrain-1",
+  "is_sold": false
+}
+
+
+{
+    "client": 3,
+    "property_id": 10,
+    "property_type": "maison"
+}
+
+
+{
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "1234567890",
+    "address": "123 Main St, Paris"
+}
+
+
+http://127.0.0.1:8000/maisons/search/
+http://127.0.0.1:8000/terrains/search/
+http://127.0.0.1:8000/appartements/search/
+
+http://127.0.0.1:8000/maisons/id/
+http://127.0.0.1:8000/terrains/id/
+http://127.0.0.1:8000/appartements/id/
+
+http://127.0.0.1:8000/maisons/update/id/
+http://127.0.0.1:8000/terrains/update/id/
+http://127.0.0.1:8000/appartements/update/id/
+
+http://127.0.0.1:8000/maisons/create/
+http://127.0.0.1:8000/terrains/create/
+http://127.0.0.1:8000/appartements/create/
+
+http://127.0.0.1:8000/maisons/delete/id/
+http://127.0.0.1:8000/terrains/delete/id/
+http://127.0.0.1:8000/appartements/delete/id/
+
+http://127.0.0.1:8000/maisons/search/?city=hammamet
+http://127.0.0.1:8000/maisons/search/?area_min=2000
+http://127.0.0.1:8000/maisons/search/?area_max=2000
+http://127.0.0.1:8000/maisons/search/?price_min=90000
+http://127.0.0.1:8000/maisons/search/?price_max=90000
+http://127.0.0.1:8000/maisons/search/?rooms=9
+http://127.0.0.1:8000/maisons/search/?is_sold=false
+
+http://127.0.0.1:8000/terrains/search/?city=tozeur
+http://127.0.0.1:8000/terrains/search/?area_min=10000
+http://127.0.0.1:8000/terrains/search/?area_max=10000
+http://127.0.0.1:8000/terrains/search/?price_min=10000
+http://127.0.0.1:8000/terrains/search/?price_max=10000
+http://127.0.0.1:8000/terrains/search/?is_sold=false
+
+http://127.0.0.1:8000/appartements/search/?city=hammamet
+http://127.0.0.1:8000/appartements/search/?rooms=15
+http://127.0.0.1:8000/appartements/search/?area_min=10000
+http://127.0.0.1:8000/appartements/search/?area_max=10000
+http://127.0.0.1:8000/appartements/search/?price_min=10000
+http://127.0.0.1:8000/appartements/search/?price_max=10000
+http://127.0.0.1:8000/appartements/search/?is_sold=false
+
+http://127.0.0.1:8000/clients/search/
+http://127.0.0.1:8000/clients/id/
+http://127.0.0.1:8000/clients/create/
+http://127.0.0.1:8000/clients/update/id/
+http://127.0.0.1:8000/clients/delete/id/
+http://127.0.0.1:8000/clients/search/?first_name=mot
+http://127.0.0.1:8000/clients/search/?last_name=mot
+http://127.0.0.1:8000/clients/search/?email=gmail
+http://127.0.0.1:8000/clients/search/?phone=96969696
+
+http://127.0.0.1:8000/transactions/search/
+http://127.0.0.1:8000/transactions/id/
+http://127.0.0.1:8000/transactions/create/
+http://127.0.0.1:8000/transactions/update/id/
+http://127.0.0.1:8000/transactions/search/?client=id
+http://127.0.0.1:8000/transactions/search/?property_id=id
+http://127.0.0.1:8000/transactions/search/?property_type=appartement
+http://127.0.0.1:8000/transactions/search/?price_min=100000
+http://127.0.0.1:8000/transactions/search/?price_max=100000
+
+http://localhost:8000/api/properties/<property_type>/<property_id>/map/

@@ -1,0 +1,28 @@
+
+CREATE SEQUENCE appartement_id_seq;
+ALTER TABLE public.appartement ALTER COLUMN id SET DEFAULT nextval('appartement_id_seq');
+ALTER SEQUENCE appartement_id_seq OWNED BY public.appartement.id;
+
+
+
+CREATE SEQUENCE maison_id_seq;
+ALTER TABLE public.maison ALTER COLUMN id SET DEFAULT nextval('maison_id_seq');
+ALTER SEQUENCE maison_id_seq OWNED BY public.maison.id;
+
+
+
+CREATE SEQUENCE terrain_id_seq;
+ALTER TABLE public.terrain ALTER COLUMN id SET DEFAULT nextval('terrain_id_seq');
+ALTER SEQUENCE terrain_id_seq OWNED BY public.terrain.id;
+
+
+SELECT MAX(id) FROM public.maison;
+SELECT setval('maison_id_seq', (SELECT MAX(id) FROM public.maison));
+
+
+SELECT MAX(id) FROM public.terrain;
+SELECT setval('terrain_id_seq', (SELECT MAX(id) FROM public.terrain));
+
+
+SELECT MAX(id) FROM public.appartement;
+SELECT setval('appartement_id_seq', (SELECT MAX(id) FROM public.appartement));

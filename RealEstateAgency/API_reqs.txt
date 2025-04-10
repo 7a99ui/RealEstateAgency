@@ -1,0 +1,188 @@
+JSON pour Maison-------------------------------------------------------------------------
+{
+  "title": "Maison Moderne à Paris",
+  "city": "Paris",
+  "property": "Maison",
+  "area": 150.0,
+  "rooms": 5,
+  "price": 850000,
+  "longitude": 2.3522,
+  "latitude": 48.8566,
+  "link": "http://example.com/maison-1",
+  "is_sold": false
+}
+
+
+JSON pour Appartement------------------------------------------------------------------------------------
+{
+  "title": "Appartement Spacieux à Lyon",
+  "city": "Lyon",
+  "property": "Appartement",
+  "area": 85.0,
+  "rooms": 3,
+  "price": 250000,
+  "longitude": 4.8357,
+  "latitude": 45.7640,
+  "link": "http://example.com/appartement-1",
+  "is_sold": true
+}
+
+
+
+JSON pour Terrain-------------------------------------------------------------------------------------------------
+{
+  "title": "Terrain à vendre à Marseille",
+  "city": "Marseille",
+  "property": "Terrain",
+  "area": 500.0,
+  "price": 300000,
+  "longitude": 5.3698,
+  "latitude": 43.2965,
+  "link": "http://example.com/terrain-1",
+  "is_sold": false
+}
+
+
+
+JSON pour Client------------------------------------------------------------------------------------------------
+{
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "1234567890",
+    "address": "123 Main St, Paris"
+}
+
+
+
+
+
+
+
+
+
+
+maisons------------------------------------------------------------------------------------------------------------------------
+
+GET http://localhost:8000/maisons/ — Lister toutes les maisons.
+
+GET http://localhost:8000/maisons/?city=x — Lister les maisons avec un filtre par city ("x").
+
+GET http://localhost:8000/maisons/1/ — Récupérer la maison avec l'ID 1.
+
+GET http://localhost:8000/maisons/?price_min=200000
+
+POST http://localhost:8000/maisons/create/ — Créer une nouvelle maison (requête avec données JSON).
+
+PATCH http://localhost:8000/maisons/update/1/ Mettre à jour la maison avec l'ID 1 (requête avec nouvelles données JSON).
+
+DELETE http://localhost:8000/maisons/delete/1/ — Supprimer la maison avec l'ID 1.
+
+
+
+
+
+Appartements------------------------------------------------------------------------------------------
+
+GET http://localhost:8000/appartements/ — Lister tous les appartements.
+
+GET http://localhost:8000/appartements/?city=beja Lister les appartements avec un filtre par city ("beja").
+
+GET http://localhost:8000/appartements/?rooms_min=3 — Lister les appartements avec un minimum de 3 room.
+
+POST http://localhost:8000/appartements/create/ — Créer un nouvel appartement (requête avec données JSON).
+
+GET http://localhost:8000/appartements/1/ — Récupérer l'appartement avec l'ID 1.
+
+PATCH http://localhost:8000/appartements/update/1/ — Mettre à jour l'appartement avec l'ID 1 (requête avec nouvelles données JSON).
+
+DELETE http://localhost:8000/appartements/delete/1/ — Supprimer l'appartement avec l'ID 1.
+
+
+
+
+
+Terrains----------------------------------------------------------------------------------------------------
+
+GET http://localhost:8000/terrains/ — Lister tous les terrains.
+
+GET http://localhost:8000/terrains/?area_min=1000 — Lister les terrains avec une surface minimum de 1000 m².
+
+GET http://localhost:8000/terrains/?city=sfax — Lister les terrains avec un filtre de localisation ("sfax").
+
+POST http://localhost:8000/terrains/create/ — Créer un nouveau terrain (requête avec données JSON).
+
+GET http://localhost:8000/terrains/1/ — Récupérer le terrain avec l'ID 1.
+
+PATH http://localhost:8000/terrains/update/1/ — Mettre à jour le terrain avec l'ID 1 (requête avec nouvelles données JSON).
+
+DELETE http://localhost:8000/terrains/delete/1/ — Supprimer le terrain avec l'ID 1.
+
+
+
+
+
+
+Client----------------------------------------------------------------------------------------------------------------
+
+
+
+Lister tous les clients
+GET http://localhost:8000/clients/
+
+Créer un client
+POST http://localhost:8000/clients/create/
+
+Récupérer un client par ID
+GET http://localhost:8000/clients/1/
+
+Mettre à jour un client (partiellement)
+PATCH http://localhost:8000/clients/update/1/
+
+Supprimer un client
+DELETE http://localhost:8000/clients/delete/1/
+
+Rechercher par prénom
+GET http://localhost:8000/clients/?first_name=John
+
+Rechercher par nom de famille
+GET http://localhost:8000/clients/?last_name=Doe
+
+Rechercher par email
+GET http://localhost:8000/clients/?email=john.doe@example.com
+
+Rechercher par téléphone
+GET http://localhost:8000/clients/?phone=1234567890
+
+Filtrage combiné (exemple)
+GET http://localhost:8000/clients/?first_name=John&last_name=Doe
+
+
+
+
+Transaction----------------------------------------------------------------------------------------------------------------
+
+
+Créer une transaction
+POST http://localhost:8000/transactions/create/
+
+Récupérer une transaction par ID
+GET http://localhost:8000/transactions/1/
+
+Mettre à jour une transaction (partiellement)
+PATCH http://localhost:8000/transactions/update/1/
+
+Supprimer une transaction
+DELETE http://localhost:8000/transactions/delete/1/
+
+Rechercher par client ID
+GET http://localhost:8000/transactions/?client=1
+
+Rechercher par type de propriété
+GET http://localhost:8000/transactions/?property_type=maison
+
+Rechercher par type de transaction
+GET http://localhost:8000/transactions/?transaction_type=achat
+
+Rechercher par date de transaction
+GET http://localhost:8000/transactions/?transaction_date=2024-12-01
